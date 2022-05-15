@@ -1,5 +1,5 @@
 {
-  "name": "pkg-name",
+  "name": "notion-image-compress",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.0.0",
@@ -62,5 +62,12 @@
     "unbuild": "^0.7.4",
     "vite": "^2.9.9",
     "vitest": "^0.12.4"
+  },
+  "dependencies": {
+    "@notionhq/client": "^1.0.4",
+    "@squoosh/lib": "^0.4.0",
+    "notion-client": "^6.12.9",
+    "notion-types": "^6.12.6",
+    "qiniu": "^7.6.0"
   }
 }
