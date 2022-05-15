@@ -48,6 +48,13 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@notionhq/client": "^1.0.4",
+    "@squoosh/lib": "^0.4.0",
+    "notion-client": "^6.12.9",
+    "notion-types": "^6.12.6",
+    "qiniu": "^7.6.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.0",
     "@antfu/ni": "^0.16.2",
@@ -62,12 +69,5 @@
     "unbuild": "^0.7.4",
     "vite": "^2.9.9",
     "vitest": "^0.12.4"
-  },
-  "dependencies": {
-    "@notionhq/client": "^1.0.4",
-    "@squoosh/lib": "^0.4.0",
-    "notion-client": "^6.12.9",
-    "notion-types": "^6.12.6",
-    "qiniu": "^7.6.0"
   }
 }

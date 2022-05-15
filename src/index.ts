@@ -1,6 +1,4 @@
 import { Readable } from 'stream'
-import path from 'path'
-import fs from 'fs'
 
 import {
   findImageBlocks,
