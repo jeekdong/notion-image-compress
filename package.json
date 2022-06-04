@@ -25,6 +25,9 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+    "dist"
+  ],
   "bin": {
     "nic": "./bin/nic.js"
   },
@@ -36,9 +39,6 @@
       ]
     }
   },
-  "files": [
-    "dist"
-  ],
   "sideEffects": false,
   "scripts": {
     "build": "unbuild",
