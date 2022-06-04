@@ -25,6 +25,9 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "bin": {
+    "nic": "./bin/nic.js"
+  },
   "typesVersions": {
     "*": {
       "*": [
