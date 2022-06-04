@@ -3,7 +3,12 @@ import { Client } from '@notionhq/client'
 
 import type { ExtendedRecordMap } from 'notion-types'
 
-const notion = new Client({ auth: process.env.NOTION_ACCESS_TOKEN })
+import {
+  CONF_KEY_NOTION_ACCESS_TOKEN,
+} from './utils/constants'
+import { conf } from './utils/tools'
+
+const notion = new Client({ auth: conf.getConfig()[CONF_KEY_NOTION_ACCESS_TOKEN] })
 
 export async function getPageBlocks(
   id: string,

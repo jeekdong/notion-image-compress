@@ -3,16 +3,22 @@ import qiniu from 'qiniu'
 import {
   BUCKET,
   CDN_URL,
+  CONF_KEY_UPLOAD_KEY,
+  CONF_KEY_UPLOAD_TOKEN,
 } from './utils/constants'
+import { conf } from './utils/tools'
 
-qiniu.conf.ACCESS_KEY = process.env.QINIU_ACCESS_KEY || ''
-qiniu.conf.SECRET_KEY = process.env.QINIU_SECRET_KEY || ''
+const QINIU_ACCESS_KEY = conf.getConfig()[CONF_KEY_UPLOAD_KEY] || ''
+const QINIU_SECRET_KEY = conf.getConfig()[CONF_KEY_UPLOAD_TOKEN] || ''
+
+qiniu.conf.ACCESS_KEY = QINIU_ACCESS_KEY
+qiniu.conf.SECRET_KEY = QINIU_SECRET_KEY
 
 export function uploadConfig() {
   const config = new qiniu.conf.Config()
   const mac = new qiniu.auth.digest.Mac(
-    process.env.QINIU_ACCESS_KEY,
-    process.env.SECRET_KEY,
+    QINIU_ACCESS_KEY,
+    QINIU_SECRET_KEY,
   )
   // @ts-expect-error
   config.zone = qiniu.zone.Zone_z2
