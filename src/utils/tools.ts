@@ -10,7 +10,7 @@ import {
 
 export class Conf {
   constructor() {
-    nconf.argv().env().file({ file: CONF_PATH })
+    nconf.env().file({ file: CONF_PATH })
     this._init()
   }
 
