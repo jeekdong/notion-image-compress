@@ -60,3 +60,9 @@ export class Conf {
 }
 
 export const conf = new Conf()
+
+export function extractArray<T>(arr: T[] | T): T {
+  if (Array.isArray(arr))
+    return extractArray(arr[0])
+  return arr
+}

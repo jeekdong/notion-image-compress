@@ -3,11 +3,11 @@ import { Client } from '@notionhq/client'
 
 import type { ExtendedRecordMap } from 'notion-types'
 
+import { conf, extractArray } from './utils/tools'
+
 import {
   CONF_KEY_NOTION_ACCESS_TOKEN,
 } from './utils/constants'
-import { conf } from './utils/tools'
-
 const notion = new Client({ auth: conf.getConfig()[CONF_KEY_NOTION_ACCESS_TOKEN] })
 
 export async function getPageBlocks(
@@ -41,8 +41,8 @@ export async function getImageUrls(
   }[] = []
   for (let i = 0; i < imageBlockIds.length; i++) {
     const block = recordMap.block[imageBlockIds[i]]
-    const imageUrl = recordMap.signed_urls[imageBlockIds[i]]
-      || block.value.properties.source
+    const imageUrl = extractArray(recordMap.signed_urls[imageBlockIds[i]])
+      || extractArray(block.value.properties.source)
     imageUrls.push({
       id: imageBlockIds[i],
       url: imageUrl,

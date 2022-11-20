@@ -17,6 +17,11 @@ export async function autoCompress(file: Buffer) {
       console.log('🐼 use tiny-png')
       return tinypngCompress(file)
     }
+    // 其他类型的图片暂不处理
+    return [
+      file,
+      type,
+    ]
   }
   return Promise.reject(new Error('can not get image type'))
 }
